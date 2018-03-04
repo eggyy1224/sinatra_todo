@@ -1,0 +1,22 @@
+<section id="todos">
+  <header>
+    <h2><%= @list[:name] %></h2>
+  </header>
+</section>
+
+<a href="/lists">All lists</a>
+
+<form action="/todos" method="post">
+  <dl>
+    <dt>
+      <label for="todo_name">Enter the name for your new list:</label>
+    </dt>
+    <dd>
+      <input type="text" name="todo_name" placeholder="List Name" value="">
+    </dd>
+  </dl>
+  <fieldset class="actions">
+    <input type="submit" value="Save">
+    <a href="/">Cancel</a>
+  </fieldset>
+</form>
