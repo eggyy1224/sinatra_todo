@@ -1,17 +1,20 @@
 
 <ul id="lists">
   <% @lists.each_with_index do |list, index| %>
-    <li>
+    <li class=<%= list_class(list) %>>
+    
       <a>
         <h2>
           <a href="/lists/<%= index %>"><%= list[:name] %></a>
-          </h2>
-        <p><%= list[:todos].size %></p>
+        </h2>
+        <p>
+          <%= todo_remaining_count(list) %>
+        </p>
       </a>
-      </li>
+    </li>
   <% end %>
 </ul>
 
 <% content_for :header_links do %>
-  <a href="/lists/new">New List</a>
+  <a class="add" href="/lists/new">New List</a>
 <% end %>

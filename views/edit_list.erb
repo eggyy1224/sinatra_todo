@@ -1,8 +1,20 @@
 <section id="todos">
   <header>
     <h2>Editing '<%= @list[:name] %>'</h2>
+    <ul>
+      <li>
+        <form action="/lists/<%= @id %>/destroy" method="post">
+          <button type="submit" class="delete">Delete List</button>
+        </form>
+        <!-- <a class="delete" href="/lists/<%= @id %>/destroy">Delete List</a> -->
+      </li>
+    </ul>
   </header>
 </section>
+
+<% content_for :header_links do %>
+  <a href="/lists">All lists</a>
+<% end %>
 
 <form action="/lists/<%= params[:id] %>" method="post">
   <dl>
